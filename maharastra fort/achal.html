@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore the history and heritage of Maharashtra forts.">
+<title>Maharashtra Forts | Legacy of Swarajya</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brown: #5a2d16;
+    --gold: #c58b2a;
+    --cream: #f7f0e4;
+    --ink: #20140d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.topbar {
+    background: #21150e;
+    color: #e8bd62;
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6%;
+    background: #fffaf2;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 18px #00000012;
+}
+
+.brand {
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.brand small {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.nav-button,
+.primary-btn {
+    display: inline-block;
+    background: var(--brown);
+    color: white;
+    padding: 13px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-button:hover,
+.primary-btn:hover {
+    background: #87451f;
+    transform: translateY(-2px);
+}
+
+.hero {
+    min-height: 680px;
+    position: relative;
+    background-image: url("images/lohagad.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(18,11,8,.9),
+        rgba(18,11,8,.5),
+        rgba(18,11,8,.1)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 85%;
+    max-width: 850px;
+    margin: auto;
+    padding: 70px 0;
+}
+
+.eyebrow,
+.section-tag {
+    color: #dba94e;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(40px, 7vw, 78px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero h1 span,
+h2 span {
+    color: var(--gold);
+}
+
+.hero p {
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 35px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.hero-stats div {
+    border-left: 2px solid var(--gold);
+    padding-left: 14px;
+}
+
+.hero-stats strong {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+}
+
+.hero-stats small,
+.stat-note {
+    font-size: 10px;
+    color: #ddd0c3;
+}
+
+.stat-note {
+    display: block;
+    margin-top: 15px;
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.section-wrap {
+    width: 90%;
+    max-width: 1160px;
+    margin: auto;
+}
+
+.intro {
+    text-align: center;
+    padding: 90px 0 60px;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(28px, 4vw, 45px);
+    margin: 15px 0;
+}
+
+.intro-text {
+    max-width: 750px;
+    margin: auto;
+    color: #76695d;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.fort-section {
+    padding: 40px 0 100px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.collection-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #76695d;
+}
+
+.search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border: 1px solid #ddcfbd;
+    padding: 15px;
+}
+
+.search-wrap input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+
+.search-wrap > span:first-child {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+.search-hint {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #76695d;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 30px;
+}
+
+.filter {
+    padding: 10px 16px;
+    border: 1px solid #d8c9b6;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.filter.active,
+.filter:hover {
+    background: var(--brown);
+    color: white;
+}
+
+.fort-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.fort-card {
+    background: white;
+    border: 1px solid #eadfce;
+    overflow: hidden;
+    box-shadow: 0 10px 30px #4a2c1510;
+    transition: .3s;
+}
+
+.fort-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px #4a2c1525;
+}
+
+.fort-image {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    background: #e3d5c2;
+}
+
+.fort-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.fort-card:hover .fort-image img {
+    transform: scale(1.06);
+}
+
+.fort-type {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #21150ee8;
+    color: #e8bd62;
+    padding: 7px 10px;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.fort-info {
+    padding: 22px;
+}
+
+.fort-info h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+}
+
+.location {
+    color: #a66f25;
+    font-size: 11px;
+    font-weight: 600;
+    margin: 8px 0 12px;
+}
+
+.fort-info p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #76695d;
+}
+
+.fort-link {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--brown);
+}
+
+.fort-link:hover {
+    color: var(--gold);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 30px;
+    color: #76695d;
+}
+
+.quote-section {
+    background: #24160e;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.quote-mark {
+    color: var(--gold);
+    font-size: 80px;
+}
+
+blockquote {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(22px, 4vw, 40px);
+    line-height: 1.5;
+    margin: 15px 0 25px;
+}
+
+.quote-line {
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+}
+
+.quote-section p {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #d5b170;
+}
+
+.closing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 80px 0;
+}
+
+.closing p {
+    color: #76695d;
+    font-size: 13px;
+}
+
+footer {
+    background: #160e09;
+    color: #c7b8a9;
+    text-align: center;
+    padding: 45px 20px;
+    font-size: 11px;
+}
+
+.footer-brand {
+    display: block;
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin-bottom: 15px;
+}
+
+/* FORT DETAILS */
+
+#fortDetails {
+    display: none;
+    min-height: 60vh;
+    padding: 60px 0 90px;
+}
+
+.detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.detail-layout img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 30px #00000018;
+}
+
+.detail-copy p {
+    line-height: 1.9;
+    color: #76695d;
+    font-size: 14px;
+    margin: 18px 0;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 25px;
+    background: var(--brown);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 850px) {
+    nav,
+    .nav-button {
+        display: none;
+    }
+
+    .fort-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .fort-grid,
+    .detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .fort-image {
+        height: 280px;
+    }
+
+    .closing {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .search-hint {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="homePage">
+
+    <div class="topbar">
+        ✦ THE LAND OF CHHATRAPATI SHIVAJI MAHARAJ ✦
+    </div>
+
+    <header class="navbar">
+        <a href="#home" class="brand">
+            ⚔ MAHARASHTRA
+            <small>FORTS OF SWARAJYA</small>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#forts">Explore Forts</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <a href="#forts" class="nav-button">Explore Heritage ↗</a>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="eyebrow">✦ A JOURNEY THROUGH HISTORY ✦</span>
+
+                <h1>THE FORTS OF<br><span>MAHARASHTRA</span></h1>
+
+                <p>
+                    Where every stone tells a story of courage,
+                    freedom and the glorious legacy of Swarajya.
+                </p>
+
+                <a href="#forts" class="primary-btn">
+                    EXPLORE THE FORTS ↗
+                </a>
+
+                <div class="hero-stats">
+                    <div><strong>350+</strong><small>Historic Forts*</small></div>
+                    <div><strong>400 Years</strong><small>Of Living Heritage</small></div>
+                    <div><strong>1 Legacy</strong><small>Of Swarajya</small></div>
+                </div>
+
+                <small class="stat-note">
+                    *Approximate count; totals vary by source.
+                </small>
+            </div>
+
+            <div class="hero-caption">
+                SAHYADRI MOUNTAINS · MAHARASHTRA, INDIA
+            </div>
+        </section>
+
+        <section class="intro section-wrap" id="about">
+            <div class="section-tag">OUR HERITAGE</div>
+            <h2>Echoes of a <span>Glorious Past</span></h2>
+
+            <p class="intro-text">
+                Discover the magnificent hill forts, mighty gateways
+                and remarkable stories that shaped Maharashtra's
+                history. Explore each fort through its history,
+                location and unique architecture.
+            </p>
+        </section>
+
+        <section class="fort-section section-wrap" id="forts">
+            <div class="section-heading">
+                <div>
+                    <div class="section-tag">DISCOVER · EXPLORE · LEARN</div>
+                    <h2>Explore the <span>Fort Collection</span></h2>
+                </div>
+                <span class="collection-label">MAHARASHTRA / INDIA</span>
+            </div>
+
+            <div class="search-wrap">
+                <span>⌕</span>
+                <input type="search" id="fortSearch"
+                    placeholder="Search forts by name or location..."
+                    aria-label="Search forts">
+                <span class="search-hint">FIND YOUR FORT</span>
+            </div>
+
+            <div class="filter-row" id="filters">
+                <button class="filter active" data-filter="All">All Forts</button>
+                <button class="filter" data-filter="Hill">Hill Forts</button>
+                <button class="filter" data-filter="Coastal">Coastal Forts</button>
+                <button class="filter" data-filter="Land">Land Forts</button>
+            </div>
+
+            <div class="fort-grid" id="fortGrid"></div>
+
+            <p class="empty-state" id="emptyState" hidden>
+                No forts found. Try another name or location.
+            </p>
+        </section>
+
+        <section class="quote-section">
+            <span class="quote-mark">“</span>
+            <blockquote>
+                History is not just written in books.<br>
+                It lives in the stones of our forts.
+            </blockquote>
+            <span class="quote-line"></span>
+            <p>THE IMMORTAL SPIRIT OF SWARAJYA</p>
+        </section>
+
+        <section class="closing section-wrap">
+            <div>
+                <div class="section-tag">YOUR NEXT ADVENTURE</div>
+                <h2>Every Fort Has a <span>Story.</span></h2>
+                <p>Choose a fort above and step into its fascinating past.</p>
+            </div>
+            <a href="#forts" class="primary-btn">DISCOVER HISTORY ↗</a>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#home" class="footer-brand">⚔ MAHARASHTRA FORTS</a>
+        <p>Celebrating the history and heritage of Maharashtra, India.</p>
+        <span>DESIGNED WITH PRIDE · © <span id="year"></span></span>
+    </footer>
+</div>
+
+<!-- Fort detail view -->
+<section id="fortDetails" class="section-wrap">
+    <button class="back-btn" id="backButton">← BACK TO ALL FORTS</button>
+    <div id="detailContent"></div>
+</section>
+
+<script>
+const forts = [
+    {
+        id: "lohagad",
+        name: "Lohagad Fort",
+        location: "Lonavala, Pune",
+        type: "Hill",
+        image: "images/lohagad.jpg",
+        description: "A spectacular hill fort in the Sahyadris, known for its impressive fortification walls and scenic trekking route.",
+        history: "Lohagad is a historic hill fort near Lonavala. Its location on the Sahyadri hills made it important for controlling nearby routes. The fort is known for its strong walls, gateways and the famous Vinchu Kata ridge.",
+        architecture: "The fort features stone fortifications, gateways, bastions and a long ridge that resembles a scorpion's tail."
+    },
+    {
+        id: "murud",
+        name: "Murud-Janjira Fort",
+        location: "Murud, Raigad",
+        type: "Coastal",
+        image: "images/murud.jpg",
+        description: "A famous sea fort rising from the Arabian Sea, known for its massive stone walls and coastal architecture.",
+        history: "Murud-Janjira is a renowned sea fort off the Konkan coast. It was known for its strong maritime defences and remained difficult to capture throughout its history.",
+        architecture: "Its notable features include massive stone walls, defensive towers, gateways and freshwater reservoirs within the fort."
+    },
+    {
+        id: "panhala",
+        name: "Panhala Fort",
+        location: "Panhala, Kolhapur",
+        type: "Hill",
+        image: "images/panhala.jpg",
+        description: "A historic Deccan fort surrounded by the Sahyadri landscape and associated with Maratha history.",
+        history: "Panhala Fort is a major historic fort in the Kolhapur region. It is associated with Chhatrapati Shivaji Maharaj and important events in Maratha history.",
+        architecture: "The fort is known for its extensive fortifications, gateways, large structures and strategic position overlooking the surrounding region."
+    },
+    {
+        id: "pratapgad",
+        name: "Pratapgad Fort",
+        location: "Mahabaleshwar, Satara",
+        type: "Hill",
+        image: "images/pratapgad.jpg",
+        description: "A historic mountain fort associated with Chhatrapati Shivaji Maharaj and the Battle of Pratapgad.",
+        history: "Pratapgad is especially remembered for the 1659 encounter between Chhatrapati Shivaji Maharaj and Afzal Khan. It played an important role in Maratha history.",
+        architecture: "The fort has upper and lower sections, defensive walls and gateways. A temple dedicated to Bhavani is also located within the fort complex."
+    },
+    {
+        id: "raigad",
+        name: "Raigad Fort",
+        location: "Mahad, Raigad",
+        type: "Hill",
+        image: "images/raigad.jpg",
+        description: "The historic capital of Chhatrapati Shivaji Maharaj's Swarajya, situated high above the surrounding valleys.",
+        history: "Raigad served as the capital of Chhatrapati Shivaji Maharaj's kingdom. His coronation took place here in 1674, making it one of the most significant forts in Maharashtra.",
+        architecture: "Important remains include the Maha Darwaja, royal palace foundations, market area, water tanks and the Raj Sabha."
+    },
+    {
+        id: "rajgad",
+        name: "Rajgad Fort",
+        location: "Pune District",
+        type: "Hill",
+        image: "images/rajgad.jpg",
+        description: "A magnificent Sahyadri fort that served as an important capital of Swarajya and offers spectacular mountain views.",
+        history: "Rajgad was an important capital of Swarajya for many years. Its location and strong natural defences made it a significant centre in the early Maratha kingdom.",
+        architecture: "The fort is known for its extensive plateau, multiple fortified sections, gateways and the prominent Balekilla."
+    }
+];
+
+const fortGrid = document.getElementById("fortGrid");
+const searchInput = document.getElementById("fortSearch");
+const emptyState = document.getElementById("emptyState");
+const homePage = document.getElementById("homePage");
+const fortDetails = document.getElementById("fortDetails");
+const detailContent = document.getElementById("detailContent");
+
+let activeFilter = "All";
+
+function displayForts() {
+    const searchText = searchInput.value.trim().toLowerCase();
+
+    const filteredForts = forts.filter(fort => {
+        const matchesFilter =
+            activeFilter === "All" || fort.type === activeFilter;
+
+        const matchesSearch =
+            fort.name.toLowerCase().includes(searchText) ||
+            fort.location.toLowerCase().includes(searchText) ||
+            fort.type.toLowerCase().includes(searchText);
+
+        return matchesFilter && matchesSearch;
+    });
+
+    fortGrid.innerHTML = filteredForts.map(fort => `
+        <article class="fort-card">
+            <div class="fort-image">
+                <img src="${fort.image}" alt="${fort.name}" loading="lazy">
+                <span class="fort-type">${fort.type.toUpperCase()} FORT</span>
+            </div>
+            <div class="fort-info">
+                <h3>${fort.name}</h3>
+                <div class="location">📍 ${fort.location}</div>
+                <p>${fort.description}</p>
+                <a href="#fort-${fort.id}" class="fort-link"
+                   data-open-fort="${fort.id}">
+                    EXPLORE HISTORY ↗
+                </a>
+            </div>
+        </article>
+    `).join("");
+
+    emptyState.hidden = filteredForts.length !== 0;
+}
+
+function openFort(id) {
+    const fort = forts.find(item => item.id === id);
+    if (!fort) return;
+
+    homePage.style.display = "none";
+    fortDetails.style.display = "block";
+
+    detailContent.innerHTML = `
+        <div class="detail-layout">
+            <div>
+                <img src="${fort.image}" alt="${fort.name}">
+            </div>
+            <div class="detail-copy">
+                <div class="section-tag">${fort.type.toUpperCase()} FORT</div>
+                <h2>${fort.name}</h2>
+                <div class="location">📍 ${fort.location}</div>
+                <h3>History</h3>
+                <p>${fort.history}</p>
+                <h3>Architecture</h3>
+                <p>${fort.architecture}</p>
+                <p>${fort.description}</p>
+            </div>
+        </div>
+    `;
+
+    history.pushState({ fortId: id }, "", "#fort-" + id);
+    window.scrollTo(0, 0);
+}
+
+function showHome(updateHistory = true) {
+    fortDetails.style.display = "none";
+    homePage.style.display = "block";
+
+    if (updateHistory) {
+        history.pushState({}, "", window.location.pathname + window.location.search);
+    }
+
+    window.scrollTo(0, 0);
+}
+
+fortGrid.addEventListener("click", function(event) {
+    const link = event.target.closest("[data-open-fort]");
+    if (!link) return;
+
+    event.preventDefault();
+    openFort(link.dataset.openFort);
+});
+
+document.getElementById("backButton").addEventListener("click", function() {
+    showHome();
+});
+
+document.querySelectorAll(".filter").forEach(button => {
+    button.addEventListener("click", function() {
+        document.querySelectorAll(".filter").forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        this.classList.add("active");
+        activeFilter = this.dataset.filter;
+        displayForts();
+    });
+});
+
+searchInput.addEventListener("input", displayForts);
+
+window.addEventListener("popstate", function() {
+    const match = window.location.hash.match(/^#fort-(.+)$/);
+
+    if (match) {
+        const fort = forts.find(item => item.id === match[1]);
+        if (fort) {
+            homePage.style.display = "none";
+            fortDetails.style.display = "block";
+
+            detailContent.innerHTML = `
+                <div class="detail-layout">
+                    <div><img src="${fort.image}" alt="${fort.name}"></div>
+                    <div class="detail-copy">
+                        <div class="section-tag">${fort.type.toUpperCase()} FORT</div>
+                        <h2>${fort.name}</h2>
+                        <div class="location">📍 ${fort.location}</div>
+                        <h3>History</h3><p>${fort.history}</p>
+                        <h3>Architecture</h3><p>${fort.architecture}</p>
+                        <p>${fort.description}</p>
+                    </div>
+                </div>
+            `;
+            window.scrollTo(0, 0);
+            return;
+        }
+    }
+
+    homePage.style.display = "block";
+    fortDetails.style.display = "none";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+displayForts();
+</script>
+
+</body>
+</html>
